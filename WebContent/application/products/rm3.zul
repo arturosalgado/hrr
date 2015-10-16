@@ -143,7 +143,7 @@
 	</menupopup>	
      
 	<menupopup id="inputSSRPopup">										
-						<menuitem label="SSR" onClick='Executions.getCurrent().sendRedirect("/ssr.jsp", "_blank");' />
+						<menuitem label="SSR" onClick='Executions.getCurrent().sendRedirect("/ssrcontroller", "_blank");' />
 						<menuitem label="SSR(1)" onClick='Executions.getCurrent().sendRedirect("/application/products/rm3/input/ssr.zul", "_blank");' />
 						<menuitem label="Weekly Meeting Minutes" onClick='((Window)Executions.createComponents("/application/products/rm3/input/weekly.zul", null, null)).doOverlapped();' />
 	</menupopup>	 

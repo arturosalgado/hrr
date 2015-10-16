@@ -17,7 +17,9 @@ public class AuthenticationServiceBasiccImpl implements AuthenticationService,Se
 
 	public User getUserData(){
 		Session sess = Sessions.getCurrent();
+		System.out.println("Session is - "+sess);
 		User user = (User)sess.getAttribute("userData");
+		System.out.println("User  is - "+user);
 		
 		return user;
 	}
