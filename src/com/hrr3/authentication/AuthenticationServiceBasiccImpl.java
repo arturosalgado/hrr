@@ -3,6 +3,8 @@ package com.hrr3.authentication;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 
@@ -17,9 +19,9 @@ public class AuthenticationServiceBasiccImpl implements AuthenticationService,Se
 
 	public User getUserData(){
 		Session sess = Sessions.getCurrent();
-		System.out.println("Session is - "+sess);
+		//System.out.println("Session is - "+sess);
 		User user = (User)sess.getAttribute("userData");
-		System.out.println("User  is - "+user);
+		//System.out.println("User  is - "+user);
 		
 		return user;
 	}
@@ -66,6 +68,11 @@ public class AuthenticationServiceBasiccImpl implements AuthenticationService,Se
 		// TODO Auto-generated method stub
 		Session sess = Sessions.getCurrent();
 		sess.setAttribute("userData",user);
+		
+		HttpSession session = (HttpSession) Sessions.getCurrent().getNativeSession();
+		session.setAttribute("myUserData", user);
+		
+		
 		
 	}
 }

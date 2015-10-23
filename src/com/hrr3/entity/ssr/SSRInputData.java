@@ -19,8 +19,53 @@ public class SSRInputData extends ImportSSRData{
 	private BigDecimal grpPricetd;
 	private BigDecimal seasonalmarrate;
 	private String marrate;
+	private String hp="";
+	private String hp2="";
 	
+			
+	public String getHp() {
+		return hp;
+	}
+
+
+	public void setHp(String hp) {
+		this.hp = hp;
+	}
+
+
+	public String getHp2() {
+		return hp2;
+	}
+
+
+	public void setHp2(String hp2) {
+		this.hp2 = hp2;
+	}
+
+
+	private long id; 
+	String comments = "";
 	
+	public long getId() {
+		return id;
+	}
+
+
+	public String getComments() {
+		return comments;
+	}
+
+
+	public void setComments(String comments) {
+		this.comments = comments;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
 	public SSRInputData() {
 		// TODO Auto-generated constructor stub
 	}
@@ -33,7 +78,13 @@ public class SSRInputData extends ImportSSRData{
 		return isException;
 	}
 
-
+	public String isException()
+	{
+		if (this.isException==0)
+			return "N";
+		return "";
+		
+	}
 	/**
 	 * @param isException the isException to set
 	 */
@@ -48,7 +99,11 @@ public class SSRInputData extends ImportSSRData{
 	public int getIsActual() {
 		return isActual;
 	}
-
+	public String getIsActualLabel() {
+			if(isActual == 0)
+				return "F";
+			return "A";
+	}
 
 	/**
 	 * @param isActual the isActual to set
@@ -225,6 +280,7 @@ public class SSRInputData extends ImportSSRData{
 		return grpPricetd;
 	}
 
+	
 
 	/**
 	 * @param grpPricetd the grpPricetd to set

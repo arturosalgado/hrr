@@ -1,6 +1,34 @@
+<%@page import="java.util.*,java.text.*,com.hrr3.entity.ssr.*,com.hrr3.entity.*" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
    <head>
+      <% 
+      	User u =(User)session.getAttribute("myUserData");
+        Hotel h= u.getCurrentHotel();
+        String isH = "";
+        if (h==null)
+        {
+        	isH = "noHotel";
+        }
+        else
+        {
+        	isH ="";
+        }
+      %>
+      
+      <script>
+      	var Hotel = "<%=isH%>";
+      	if (Hotel == "noHotel"){
+      	alert("Please select a Hotel");
+      	window.close();
+      	}
+      </script>
+   	  <script>
+   	   // declare it before everything 
+      	 site_url = '${site_url}/ssrcontrollerajax';
+      	//prompt(site_url,site_url);
+      </script>
       <meta http-equiv="Pragma" content="no-cache">
       <meta http-equiv="Expires" content="-1">
       <title></title>
@@ -19,13 +47,25 @@
       <script src="js/scripts.js"></script>
       <script src="js/jquery-ui/jquery-ui.js"></script>
       <link rel="stylesheet" type="text/css" href="js/jquery-ui/jquery-ui.css">
-     
+      
+      
+      
       
    </head>
    <body class="safari safari537 breeze">
    
+   <%
    
+   List<SSRInputData> tdrList = (List<SSRInputData>) request.getAttribute("tdrList");
    
+  
+  int row = 0;
+   
+   %>
+   
+ 
+   
+
       <div id="mXDP_" style="width:100%;height:100%;" class="z-page">
          <div style="display:none" id="mXDP0">
             &nbsp;
@@ -89,7 +129,7 @@
                                                                                                    <tbody>
                                                                                                       <tr valign="middle">
                                                                                                          <td id="mXDP5-frame" style="width:100%;height:100%" align="center">
-                                                                                                            <form action = "ssrcontroller" method="post" >
+                                                                                                            <form action = "ssrcontroller" method="post" id="dateForm" >
                                                                                                             <table id="mXDP5-real" cellpadding="0" cellspacing="0" border="0" style="text-align:left">
                                                                                                                <tbody>
                                                                                                                   <tr valign="middle">
@@ -99,8 +139,8 @@
                                                                                                                      <td id="mXDP6-chdex2" class="z-hbox-sep"><img style="height:0;width:0"></td>
                                                                                                                      <td id="mXDP7-chdex" style="height:100%">
                                                                                                                         <i id="mXDP7" style="width:100px;" class="z-datebox">
-                                                                                                                           <input id="datepicker1" name="date1" class="z-datebox-inp" autocomplete="off" value="" type="text" size="11" style="width: 76px;">
-                                                                                                                           <i id="mXDP7-btn" class="z-datebox-btn">
+                                                                                                                           <input id="datepicker1" name="date1" class="z-datebox-inp" autocomplete="off" value="${date1}" type="text" size="11" style="width: 76px;">
+                                                                                                                           <i id="calendar-icon-2" class="z-datebox-btn calendar-icon">
                                                                                                                               <div class="z-datebox-btn-icon"></div>
                                                                                                                            </i>
                                                                                                                            <div id="mXDP7-pp" class="z-datebox-pp" style="display: none; z-index: 1800; height: auto; width: auto; position: absolute; top: 82px; left: 595.5px;" tabindex="-1">
@@ -224,8 +264,8 @@
                                                                                                                      <td id="mXDP8-chdex2" class="z-hbox-sep"><img style="height:0;width:0"></td>
                                                                                                                      <td id="mXDP9-chdex" style="height:100%">
                                                                                                                         <i id="mXDP9" style="width:100px;" class="z-datebox">
-                                                                                                                           <input id="datepicker2" name="date2"class="z-datebox-inp" autocomplete="off" value="" type="text" size="11" style="width: 76px;">
-                                                                                                                           <i id="mXDP9-btn" class="z-datebox-btn">
+                                                                                                                           <input id="datepicker2" name="date2"class="z-datebox-inp" autocomplete="off" value="${date2}" type="text" size="11" style="width: 76px;">
+                                                                                                                           <i id="calendar-icon-1" class="z-datebox-btn calendar-icon">
                                                                                                                               <div class="z-datebox-btn-icon"></div>
                                                                                                                            </i>
                                                                                                                            <div id="mXDP9-pp" class="z-datebox-pp" style="display: none; z-index: 1800; height: auto; width: auto; position: absolute; top: 82px; left: 752.5px;" tabindex="-1">
@@ -343,7 +383,7 @@
                                                                                                                         </i>
                                                                                                                      </td>
                                                                                                                      <td id="mXDP9-chdex2" class="z-hbox-sep"><img style="height:0;width:0"></td>
-                                                                                                                     <td id="mXDPa-chdex" style="height:100%"><button type="submit" id="" style="width:40px;height:40px;" class="z-button-os">GO</button></td>
+                                                                                                                     <td id="mXDPa-chdex" style="height:100%"><button type="submit" id="submit" style="width:40px;height:40px;" class="z-button-os">GO</button></td>
                                                                                                                   </tr>
                                                                                                                </tbody>
                                                                                                             </table>
@@ -767,47 +807,228 @@
                                                                                     </tr>
                                                                                  </tbody>
                                                                                  <tbody id="mXDPk" class="z-rows">
-                                                                                 <% for (int i=0;i<3;i++){ %>
-                                                                                    <tr id="mXDPw1" class="z-row">
-                                                                                       <td id="mXDP2j-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDP2j-cell" class="z-row-cnt z-overflow-hidden"><input id="mXDP2j" style="width:120px;" class="z-textbox z-textbox-inplace z-textbox-real-readonly z-textbox-readonly" value="" type="text" readonly="readonly"></div>
-                                                                                       </td>
-                                                                                       <td id="mXDP3j-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDP3j-cell" class="z-row-cnt z-overflow-hidden"><input id="mXDP3j" style="width:40px;" class="z-textbox z-textbox-inplace z-textbox-real-readonly z-textbox-readonly" value="N" type="text" maxlength="1" readonly="readonly"></div>
-                                                                                       </td>
-                                                                                       <td id="mXDP4j-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDP4j-cell" class="z-row-cnt z-overflow-hidden"><span id="mXDP4j" class="z-label">Saturday</span></div>
-                                                                                       </td>
-                                                                                       <td id="mXDP5j-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDP5j-cell" class="z-row-cnt z-overflow-hidden"><span id="mXDP5j" class="z-label">08/22/2015</span></div>
-                                                                                       </td>
-                                                                                       <td id="mXDP6j-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDP6j-cell" class="z-row-cnt z-overflow-hidden"><span id="mXDP6j" class="z-label">A</span></div>
-                                                                                       </td>
-                                                                                       <td id="mXDP7j-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDP7j-cell" class="z-row-cnt z-overflow-hidden"><span id="mXDP7j" class="z-label">96.1</span></div>
-                                                                                       </td>
-                                                                                       <td id="mXDP8j-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDP8j-cell" class="z-row-cnt z-overflow-hidden"><span id="mXDP8j" class="z-label">146</span></div>
-                                                                                       </td>
-                                                                                       <td id="mXDP9j-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDP9j-cell" class="z-row-cnt z-overflow-hidden"><span id="mXDP9j" class="z-label">0.000</span></div>
-                                                                                       </td>
-                                                                                       
-                                                                                       <% for(int j = 0; j<23;j++){ %>
-                                                                                       <td id="mXDPaj-chdextr" class="z-row-inner">
-                                                                                          <div id="mXDPaj-cell" class="z-row-cnt z-overflow-hidden">
-                                                                                          <input style="width:25px;" 
-                                                                                                 id="cell_<%=i%>_<%=j%>"  
-                                                                                                 row="<%=i%>"
-                                                                                                 col="<%=j %>"
-                                                                                                 class="keylistener" 
-                                                                                          		 value="" type="text" >
-                                                                                          </div>
-                                                                                       </td>
-                                                                                       <% } %>
-                                                                                    </tr>
-                                                                                    <%  } %>
+
+<c:forEach items="${tdrList}" var="record">
+<% String type= "odd";
+if (row%2==0)
+	type="even";
+%>                               
+<tr id="rEsPr0" class="z-row z-grid-<%=type%>">
+	<td id="rEsPk1-chdextr" class="z-row-inner">
+		<div id="rEsPk1-cell" class="z-row-cnt z-overflow-hidden">
+			<input id="rEsPk1" style="width:120px;" class="  z-textbox z-textbox-inplace" 
+			value="${record.getComment()}" type="text">
+		</div>
+	</td>
+	<td id="rEsPl1-chdextr" class="z-row-inner">
+		<div id="rEsPl1-cell" class="z-row-cnt z-overflow-hidden">
+			<input
+			id="cell_<%=row %>_0" 
+			col="0"
+			row="<%= row %>"
+			update_id="${record.getId()}" 
+			style="width:40px;" class="changes keylistener z-textbox z-textbox-inplace" 
+			value="${record.isException()}" type="text" maxlength="1">
+		</div>
+	</td>
+	<td id="rEsPm1-chdextr" class="z-row-inner">
+	<div id="rEsPm1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPm1" class="z-label">
+	${record.getDow()}
+	</span>
+	</div></td><td id="rEsPn1-chdextr" class="z-row-inner">
+	<div id="rEsPn1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPn1" class="z-label">
+	${record.getStatdate()}
+	</span></div></td>
+	<td id="rEsPo1-chdextr" class="z-row-inner"><div id="rEsPo1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPo1" class="z-label">${record.getIsActualLabel()}</span></div></td>
+	<td id="rEsPp1-chdextr" class="z-row-inner">
+	<div id="rEsPp1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPp1" class="z-label">
+	<c:out value="${record.getOccpcnt()}"/>
+	</span></div></td>
+	<td id="rEsPq1-chdextr" class="z-row-inner">
+	<div id="rEsPq1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPq1" class="z-label">
+	<c:out value="${record.getTotOcc()}"/>
+	</span></div></td>
+	<td id="rEsPr1-chdextr" class="z-row-inner">
+	<div id="rEsPr1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="LRR-${record.getId()}" class="z-label">
+	<c:out value="${record.getLrr()}"/>
+	</span></div></td>
+	<td id="rEsPs1-chdextr" class="z-row-inner">
+	<div id="" class="z-row-cnt z-overflow-hidden">
+	
+	
+	<input id="cell_<%=row %>_1" style="width:25px;" 
+	update_id="${record.getId()}" 
+	 class="keylistener changes z-textbox z-textbox-inplace"
+	  row="<%= row %>"
+	  col="1"  
+	  value="${record.getA1()}" type="text">
+	</div></td>
+	<td id="rEsPt1-chdextr" class="z-row-inner">
+	<div id="rEsPt1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_2" style="width:25px;" update_id="${record.getId()}" 
+	 row="<%= row %>" col="2" class="changes keylistener z-textbox z-textbox-inplace"
+	 value="${record.getB2()}" type="text"></div></td>
+	 
+	<td id="rEsPu1-chdextr" class="z-row-inner"><div  id="rEsPu1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_3" style="width:25px;" update_id="${record.getId()}" row="<%= row %>" col="3" class="changes keylistener z-textbox z-textbox-inplace" 
+	value="${record.getC3()}" type="text"></div></td>
+	
+	<td id="rEsPv1-chdextr" class="z-row-inner">
+	<div id="rEsPv1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_4" style="width:25px;" update_id="${record.getId()}" 
+	row="<%= row %>" col="4"   class="changes keylistener z-textbox z-textbox-inplace" 
+	value="${record.getD4()}" type="text"></div></td>
+	
+	<td id="rEsPw1-chdextr" class="z-row-inner">
+	<div id="rEsPw1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_5" style="width:25px;" update_id="${record.getId()}"
+	 row="<%= row %>" col="5"  class="changes keylistener z-textbox z-textbox-inplace" 
+	value="${record.getE5()}" type="text"></div></td>
+	
+	
+	<td id="rEsPx1-chdextr" class="z-row-inner">
+	<div id="rEsPx1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_6" style="width:25px;"
+	 update_id="${record.getId()}" row="<%= row %>" col="6"  class="changes keylistener z-textbox z-textbox-inplace" 
+	value="${record.getF6()}" type="text"></div></td>
+	
+	<td id="rEsPy1-chdextr" class="z-row-inner"><div id="rEsPy1-cell" 
+	class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_7" style="width:25px;" 
+	update_id="${record.getId()}" row="<%= row %>" col="7"  
+	class="changes keylistener z-textbox z-textbox-inplace"
+	 value="${record.getG7()}" type="text"></div></td>
+	
+	
+	<td id="rEsPz1-chdextr" class="z-row-inner">
+	<div id="rEsPz1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_8" style="width:25px;" update_id="${record.getId()}" row="<%= row %>" col="8"  class="changes keylistener z-textbox z-textbox-inplace" 
+	value="${record.getH8()}" type="text"></div></td>
+	
+	<td id="rEsP_2-chdextr" class="z-row-inner">
+	<div id="rEsP_2-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_9" style="width:25px;" 
+	update_id="${record.getId()}" row="<%= row %>" col="9"  class="keylistener changes z-textbox z-textbox-inplace" 
+	value="${record.getI9()}" type="text"></div></td>
+	
+	
+	<td id="rEsP02-chdextr" class="z-row-inner">
+	<div id="rEsP02-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_10" style="width:25px;" update_id="${record.getId()}"
+	 row="<%= row %>" col="10"  class="keylistener changes z-textbox z-textbox-inplace" 
+	value="${record.getHp1()}" type="text"></div></td>
+	
+	
+	<td id="rEsP12-chdextr" class="z-row-inner"><div id="rEsP12-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_11" style="width:25px;"
+	 update_id="${record.getId()}" row="<%= row %>" col="11" 
+	  class="keylistener changes z-textbox z-textbox-inplace"
+	 value="${record.getHp2()}" type="text">
+	 </div>
+	 </td>
+	
+	
+	
+	
+	
+	<td id="rEsP32-chdextr" class="z-row-inner">
+	<div id="rEsP32-cell" class="z-row-cnt z-overflow-hidden">
+	
+	
+	<input  id="cell_<%=row %>_12"  row="<%=row %>"
+	 col="12"
+	 update_id="${record.getId()}"
+	 style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
+	 value="<c:out value="${record.getRotbTrans()}"/>" type="text" size="11">
+	</div>
+	</td>
+	
+	<td id="rEsP42-chdextr" class="z-row-inner">
+	<div id="rEsP42-cell" class="z-row-cnt z-overflow-hidden">
+	<input  id="cell_<%=row %>_13"  row="<%=row%>" 
+	col="13"
+	update_id="${record.getId()}"
+	style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
+	value="${record.getRotbGroup()}"  type="text" size="11">
+	</div>
+	</td>
+	
+	
+	<td id="rEsP52-chdextr" class="z-row-inner"><div id="rEsP52-cell" class="z-row-cnt z-overflow-hidden">
+	<input  id="cell_<%=row %>_14"
+	 row="<%=row%>"
+	 col="14" 
+	 update_id="${record.getId()}"
+	 style="width:70px;"
+	  class="changes keylistener z-decimalbox z-decimalbox-inplace" 
+	  value="<c:out value="${record.getGrpPickedup()}"/>" type="text" size="11">
+	</div>
+	</td>
+	
+	
+	<td id="rEsP62-chdextr" class="z-row-inner"><div id="rEsP62-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_15"
+	row="<%=row%>" 
+	update_id="${record.getId()}"
+	style="width:70px;"
+	col="15" 
+	class="changes keylistener z-decimalbox z-decimalbox-inplace" value="<c:out value="${record.getGrpRmsRem()}"/>" type="text" size="11">
+	</div>
+	</td>
+	
+	
+	<td id="rEsP72-chdextr" class="z-row-inner"><div id="rEsP72-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_16"
+	row="<%=row%>" 
+	update_id="${record.getId()}"
+	col="16"
+	style="width:70px;" 
+	class="keylistener changes z-decimalbox z-decimalbox-inplace"
+	value="<c:out value="${record.getRotbCont()}"/>" type="text" size="11">
+	</div>
+	</td>
+	
+	
+	<td id="rEsP82-chdextr" class="z-row-inner"><div id="rEsP82-cell" class="z-row-cnt z-overflow-hidden">
+	<input
+	 id="cell_<%=row %>_17"
+	 col="17"
+	 row="<%=row%>" 
+	 update_id="${record.getId()}"
+	 style="width:70px;" 
+	 class="keylistener changes z-decimalbox z-decimalbox-inplace" 
+	 value="${record.getGrpDemandtd()}" 
+	 type="text" size="11">
+	</div>
+	</td>
+	
+	<td id="rEsP92-chdextr" class="z-row-inner">
+	<div id="rEsP92-cell" class="z-row-cnt z-overflow-hidden">
+	<input 
+	id="cell_<%=row %>_18"
+	col="18"
+	update_id="${record.getId()}"
+	row="<%=row%>" 
+	style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
+	value="<c:out value="${record.getGrpPricetd()}"/>" 
+	type="text" size="11">
+	</div>
+	</td>
+	
+	<td id="rEsPa2-chdextr" class="z-row-inner">
+	<div id="rEsPa2-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPa2" class="z-label"></span></div></td>
+</tr>
+<%
+row++;
+%>	                                                                                    
+                                                                                 </c:forEach> 
                                                                                  </tbody>
                                                                                  <tbody id="mXDPc-empty" class="z-grid-empty-body" style="display:none">
                                                                                     <tr>

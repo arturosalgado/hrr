@@ -103,7 +103,7 @@ public class SSRInputDAO extends RM3AbstractDAO{
 
 				while(rs.next()) {
 					SSRInputData ssrData = new SSRInputData();
-					
+					ssrData.setId(rs.getLong("ssr_id"));
 					ssrData.setComment(rs.getString("comments"));
 					ssrData.setIsException(rs.getInt("isexception"));
 					ssrData.setDow(rs.getString("dow"));

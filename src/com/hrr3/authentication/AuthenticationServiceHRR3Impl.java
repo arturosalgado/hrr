@@ -3,6 +3,8 @@ package com.hrr3.authentication;
 
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpSession;
+
 import org.zkoss.zk.ui.Session;
 import org.zkoss.zk.ui.Sessions;
 
@@ -81,7 +83,9 @@ public class AuthenticationServiceHRR3Impl extends AuthenticationServiceBasiccIm
 	
 	@Override
 	public void logout() {
-		Session sess = Sessions.getCurrent();		
+		Session sess = Sessions.getCurrent();	
+		
+		
 		sess.removeAttribute("userData");		
 		sess.invalidate();
 	}
