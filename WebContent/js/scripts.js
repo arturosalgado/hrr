@@ -1,16 +1,22 @@
 $(document).ready(function(){
     $(function()
     {
+    	//--
     	//alert('loaded')
         var updateurl = site_url;
        // alert("site only "+site_url)
         //alert(updateurl);
+       
+        var EDITING = false;
+        
         $('.changes').change(function(){
             
             var t =  ($(this).val())
             var update_id  = $(this).attr('update_id');
             var col  = $(this).attr('col');
             
+        	var e = $(this);
+          
             //alert("update id is "+update_id);
             //alert("col is "+col);
             $.post(updateurl,{value:t,'col':col,'update_id':update_id},function(data){
@@ -18,6 +24,16 @@ $(document).ready(function(){
             	  var lrr = xml.find('lrr');
             	  //alert(lrr.text())
             	  $("#LRR-"+update_id).text(lrr.text());
+            	  
+            	  var x=666;
+          	    var currentBackground=$(e).css("background-color");;
+          	    
+          		$(e).css("background-color","#D9EAD3");
+          		setTimeout(function(){
+          			  $(e).css("background-color",currentBackground);
+          			}, x);
+            	  
+            	  
              
             }).done(function() {
                 //alert( "second success" );
@@ -31,57 +47,11 @@ $(document).ready(function(){
             
         });
        
+       
         
-        $('.keylistener').keydown(function(e){
-            var col =  $(this).attr("col");
-            var row = $(this).attr("row");
-            //console.log("col"+col);
-            //console.log("row"+row);
-            //alert($(this).val())
-            switch(e.which)
-            {
-                case 39://right
-                	//alert("right")
-                    var nextCol = parseInt(col);
-                    if (nextCol<19)
-                    nextCol++;
-                    var next = '#cell_'+row+'_'+(nextCol);
-                   // alert(next);
-                    $(next).focus();
-                break;
-                 case 13:
-                 case 40://down
-                    var nextRow = parseInt(row);
-                    //alert("next is "+nextRow)
-                    //alert("col iis "+col)
-                    if (nextRow<1000)
-                    nextRow++;
-                    var next = '#cell_'+nextRow+'_'+(col);
-                    //alert(next);
-                    $(next).focus();
-                break;
-                 case 38://up
-                    var nextRow = parseInt(row);
-                    if (nextRow>0)
-                    nextRow--;
-                    var next = '#cell_'+nextRow+'_'+(col);
-                    //alert(next);
-                    $(next).focus();
-                break;
-                 case 37://left
-                	 
-                    var nextCol = parseInt(col);
-                    //alert('left '+nextCol)
-                    if(nextCol>=0)
-                    nextCol--;
-                    var next = '#cell_'+row+'_'+(nextCol);
-                    //alert(next);
-                    $(next).focus();
-                break;
-                
-            }
-           
-        });
+      
+        
+    
         
 });
     
@@ -118,6 +88,9 @@ $(document).ready(function(){
     
 });
 
+
+
+
 $(document).ready(function(){
 	
 	$("#calendar-icon-1").click(function(){
@@ -129,3 +102,60 @@ $(document).ready(function(){
 	});
 	
 });
+
+$(document).ready(function(){
+	var myFirstColor = undefined;
+	$(".changes").focusin(function(){
+		myFirstColor = $(this).css("background-color");
+		$(this).css("background-color","#F4CCCC");
+		this.select();
+		
+	});
+	$(".changes").focusout(function(){
+		var e =$(this);
+		var bg = $(e).css("background-color");
+		
+		$(this).css("background-color",myFirstColor);
+	});
+	
+	
+	
+});
+$(document).ready(function(){
+$(".keylistener").keypress(function(e){
+	
+	 if(e.which == 13) {
+	        
+	        var col =  $(this).attr("col");
+            var row = $(this).attr("row");
+            var nextRow = parseInt(row);
+            //alert("next is "+nextRow)
+            //alert("col iis "+col)
+            if (nextRow<1000)
+            nextRow++;
+            var next = '#cell_'+nextRow+'_'+(col);
+            //alert(next);
+            $(next).focus();
+	        
+	    }
+	
+});
+});
+$(document).ready(function(){
+	
+	$(".keylistener").focusin(function(){
+		
+		//$(this).css("border","1px solid red");
+		$(this).select();
+		
+		
+	});
+	$(".keylistener").focusout(function(){
+		
+		//$(this).css("border","none");
+		
+	});
+	
+});
+
+

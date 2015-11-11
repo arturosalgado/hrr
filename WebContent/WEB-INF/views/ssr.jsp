@@ -33,7 +33,7 @@
       <meta http-equiv="Expires" content="-1">
       <title></title>
       <link rel="stylesheet" type="text/css" href="/hrr3/zkau/web/442f0d03/zul/css/zk.wcs">
-      <script type="text/javascript" src="/hrr3/zkau/web/442f0d03/js/zk.wpd" charset="UTF-8"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.lang.wpd"></script>
+      
       <!-- ZK 6.5.4 2013092409 -->
       <script type="text/javascript">
          AU_progressbar = function (id, msg) 
@@ -41,10 +41,10 @@
              Boot_progressbox(id, msg, 0, 0, true, true);
          };
       </script>
-      <script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.wnd.wpd"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.box.wpd"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.grid.wpd"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.mesh.wpd"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.db.wpd"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.utl.wpd"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.menu.wpd"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zul.inp.wpd"></script><script type="text/javascript" charset="UTF-8" src="/hrr3/zkau/web/_zv2013092409/js/zk.fmt.wpd"></script>
+      
       
       <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-      <script src="js/scripts.js"></script>
+      <script src="js/scripts2.js"></script>
       <script src="js/jquery-ui/jquery-ui.js"></script>
       <link rel="stylesheet" type="text/css" href="js/jquery-ui/jquery-ui.css">
       
@@ -816,7 +816,12 @@ if (row%2==0)
 <tr id="rEsPr0" class="z-row z-grid-<%=type%>">
 	<td id="rEsPk1-chdextr" class="z-row-inner">
 		<div id="rEsPk1-cell" class="z-row-cnt z-overflow-hidden">
-			<input id="rEsPk1" style="width:120px;" class="  z-textbox z-textbox-inplace" 
+			<input  
+			   id="cell_<%=row %>_-1" 
+			   col="-1"
+			   row="<%= row %>"
+			   update_id="${record.getId()}" 
+			style="width:120px;" class="changes keylistener   z-textbox z-textbox-inplace" 
 			value="${record.getComment()}" type="text">
 		</div>
 	</td>
@@ -827,7 +832,7 @@ if (row%2==0)
 			col="0"
 			row="<%= row %>"
 			update_id="${record.getId()}" 
-			style="width:40px;" class="changes keylistener z-textbox z-textbox-inplace" 
+			style="width:40px;" class="changes editormode keylistener z-textbox z-textbox-inplace" 
 			value="${record.isException()}" type="text" maxlength="1">
 		</div>
 	</td>
@@ -851,7 +856,7 @@ if (row%2==0)
 	<td id="rEsPq1-chdextr" class="z-row-inner">
 	<div id="rEsPq1-cell" class="z-row-cnt z-overflow-hidden">
 	<span id="rEsPq1" class="z-label">
-	<c:out value="${record.getTotOcc()}"/>
+	<c:out value="${record.getTotOccS()}"/>
 	</span></div></td>
 	<td id="rEsPr1-chdextr" class="z-row-inner">
 	<div id="rEsPr1-cell" class="z-row-cnt z-overflow-hidden">
@@ -864,7 +869,7 @@ if (row%2==0)
 	
 	<input id="cell_<%=row %>_1" style="width:25px;" 
 	update_id="${record.getId()}" 
-	 class="keylistener changes z-textbox z-textbox-inplace"
+	 class="keylistener editormode changes z-textbox z-textbox-inplace"
 	  row="<%= row %>"
 	  col="1"  
 	  value="${record.getA1()}" type="text">
@@ -945,7 +950,7 @@ if (row%2==0)
 	 col="12"
 	 update_id="${record.getId()}"
 	 style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	 value="<c:out value="${record.getRotbTrans()}"/>" type="text" size="11">
+	 value="${record.getOversellFactor()}" type="text" size="11">
 	</div>
 	</td>
 	
@@ -955,7 +960,7 @@ if (row%2==0)
 	col="13"
 	update_id="${record.getId()}"
 	style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	value="${record.getRotbGroup()}"  type="text" size="11">
+	value="${record.getRotbGroupS()}"  type="text" size="11">
 	</div>
 	</td>
 	
@@ -967,7 +972,7 @@ if (row%2==0)
 	 update_id="${record.getId()}"
 	 style="width:70px;"
 	  class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	  value="<c:out value="${record.getGrpPickedup()}"/>" type="text" size="11">
+	  value="<c:out value="${record.getGrpPickedupS()}"/>" type="text" size="11">
 	</div>
 	</td>
 	
@@ -978,7 +983,7 @@ if (row%2==0)
 	update_id="${record.getId()}"
 	style="width:70px;"
 	col="15" 
-	class="changes keylistener z-decimalbox z-decimalbox-inplace" value="<c:out value="${record.getGrpRmsRem()}"/>" type="text" size="11">
+	class="changes keylistener z-decimalbox z-decimalbox-inplace" value="<c:out value="${record.getGrpRmsRemS()}"/>" type="text" size="11">
 	</div>
 	</td>
 	
@@ -990,7 +995,7 @@ if (row%2==0)
 	col="16"
 	style="width:70px;" 
 	class="keylistener changes z-decimalbox z-decimalbox-inplace"
-	value="<c:out value="${record.getRotbCont()}"/>" type="text" size="11">
+	value="<c:out value="${record.getRotbContS()}"/>" type="text" size="11">
 	</div>
 	</td>
 	
@@ -1003,7 +1008,7 @@ if (row%2==0)
 	 update_id="${record.getId()}"
 	 style="width:70px;" 
 	 class="keylistener changes z-decimalbox z-decimalbox-inplace" 
-	 value="${record.getGrpDemandtd()}" 
+	 value="${record.getGrpDemandtdS()}" 
 	 type="text" size="11">
 	</div>
 	</td>
@@ -1016,7 +1021,7 @@ if (row%2==0)
 	update_id="${record.getId()}"
 	row="<%=row%>" 
 	style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	value="<c:out value="${record.getGrpPricetd()}"/>" 
+	value="<c:out value="${record.getGrpPricetdS()}"/>" 
 	type="text" size="11">
 	</div>
 	</td>

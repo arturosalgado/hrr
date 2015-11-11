@@ -89,12 +89,24 @@ public class SsrControllerAjax extends HttpServlet {
 		System.out.println("id is "+id);
 		System.out.println("val is ["+value+"]");
 		String field = getColumn(col);
+		String table = getTable(col);
+		System.out.println("Field to update is ["+field+"]");
 		int Id = Integer.parseInt(id);
-		update((long)Id,field,value);
+		update((long)Id,field,value,table,col);
+		//comment or isAction
+		if (Integer.parseInt(col)==-1 || Integer.parseInt(col)==0)
+		{
+			// don't update lrr
+			return;
+		}
 		
 		String lrr = getUpdateLRRValue(Id, Integer.parseInt(col), value);
 		System.out.println("LRR to update is ["+lrr+"]");
-		update((long)Id,"lrr",lrr);
+		
+		if (!table.equals("RM3SSRData"))
+		return;
+		
+		update((long)Id,"lrr",lrr,table,col);
 		response.setContentType("application/xml");
 	    PrintWriter writer = response.getWriter();
 	 	writer.print(xml(lrr));
@@ -194,6 +206,36 @@ public class SsrControllerAjax extends HttpServlet {
 		
 		
 	}
+	private int readOneInt(String field, long id )
+	{
+		Connection conn = null;
+		Statement stmt2 = null;
+		ResultSet rs2 = null;
+		int value=0;
+		
+		
+		try{
+			conn = RM3DataSourceConnectionFactory.getHRR3Connection();
+			stmt2 = conn.createStatement();
+			String sql = "SELECT "+field+" FROM RM3SSRData WHERE ssr_id = "+id;
+			rs2 = stmt2.executeQuery(sql);
+			System.out.println("Executing statement <"+ sql+"> id ="+id );
+			while (rs2.next()){
+				value = rs2.getInt(field);
+				System.out.println(value + " <- value found  \n");
+			}
+		}
+		catch(NamingException| SQLException e){
+			System.out.println("returning empty string ");	
+			System.out.println("given an exception  ... "+e.getMessage());
+		}
+		
+		close(rs2, stmt2, conn);
+		
+		return value;
+		
+		
+	}
 	private float readOneFloat(String field, long id )
 	{
 		Connection conn = null;
@@ -223,8 +265,53 @@ public class SsrControllerAjax extends HttpServlet {
 		
 	}
 	
+	String getTable(String colNumber)
+	{
+		int col = Integer.parseInt(colNumber);
+		if (col>1 && col < 12)
+			return "RM3SSRData";
+		else if (col>12 && col <= 19)
+			return "RM3SSRSegmentData";
+		else
+			return "";
+		
+	}
+	
 	private String getColumn(String colNumber)
 	{
+		
+		System.out.println("Col number:: ["+colNumber+"]");
+		
+		if (colNumber.equals("-1") )//commments
+		{
+			System.out.println("comments  ");
+			return "comments";
+		}
+		
+		if (colNumber.equals("0") )//exceptiov
+		{
+			System.out.println("is exception   ");
+			return "isException";
+		}
+		
+		if (colNumber.equals("12") )//commments
+		{
+			System.out.println("is trans   ");
+			return "oversell_factor";
+		}
+		
+		if (colNumber.equals("13") )//commments
+		{
+			System.out.println("is trans   ");
+			return "tot_occ";
+		}
+		
+		//segment columns
+		int NumericCol = Integer.parseInt(colNumber);
+		if (NumericCol>=14 && NumericCol<=18)
+			return "tot_occ";
+		
+		
 		String field = "ratecat"+colNumber;
 		int col = Integer.parseInt(colNumber);
 		if (col>=1 && col<10)
@@ -247,32 +334,129 @@ public class SsrControllerAjax extends HttpServlet {
 	}
 	
 	
-	protected void update(long ssr_id, String field, String value)
-	{ResultSet rs = null;
+	protected void update(long ssr_id, String field, String value, String table,String col)
+	{	
+		ResultSet rs = null;
 		Connection conn = null;
 		PreparedStatement ps = null;
 		Statement s = null;
+		
+		if (table.equals("RM3SSRSegmentData"))
+		{
+			update2(ssr_id,field,value,table,col);
+			return;
+			
+		}
+		
+		
+		//check is Action Y or N translate to 1 or 0
+		if (field.equals("isException"))
+		{
+			if (value.equals("Y"))
+			{
+				value = "1";
+			}
+			else{
+				value = "0";
+			}
+		}
+		
 		try{
-		conn = RM3DataSourceConnectionFactory.getHRR3Connection();
-		String sql  = "UPDATE RM3SSRData set "+field+" =  '"+value+"' WHERE ssr_id = "+ssr_id+" limit 1 ";
-		System.out.println("statemet is ["+sql+"]");
-		System.out.println("new value  is ["+value+"]");
-		
-		s = conn.createStatement();
-		
-		s.executeUpdate(sql);
-		System.out.println("Final Excecuted Query  ["+sql+"]");
+			conn = RM3DataSourceConnectionFactory.getHRR3Connection();
+			String sql  = "UPDATE "+table+" set `"+field+"` =  '"+value+"' WHERE ssr_id = "+ssr_id+" limit 1 ";
+			System.out.println("statemet is ["+sql+"]");
+			System.out.println("new value  is ["+value+"]");
+			
+			s = conn.createStatement();
+			
+			s.executeUpdate(sql);
+			System.out.println("Final Excecuted Query  ["+sql+"]");
 		}
 		catch (NamingException | SQLException e)
 		{
 			// TODO Auto-generated catch block
 			   e.printStackTrace();
 			//return null;
-	}
+		}
 		finally { close(rs, ps, conn); }
 		
 	}
-	
+	protected void update2(long ssr_id, String field, String value, String table, String col)
+	{	
+		ResultSet rs = null;
+		Connection conn = null;
+		PreparedStatement ps = null;
+		Statement s = null;
+		
+		int hotel_id = readOneInt("hotel_id",(long)ssr_id);
+		String date = readOne("statdate",(long)ssr_id);
+		
+		int segment = 0;
+		switch(col)
+		{
+			case "13":
+			segment = 2;
+			break;
+			case "14":
+			segment = 3;
+			break;
+			case "15":
+				segment = 4;
+				break;
+			case "16":
+				segment = 5;
+				break;
+			case "17":
+				segment = 6;
+				break;
+			case "18":
+				segment = 7;
+				break;
+				
+		
+		}
+		
+		System.out.println("Field tp update is "+field);
+		System.out.println("Hotel found is "+hotel_id);
+		System.out.println("Statdate  found is "+date);
+		System.out.println("Segment is "+segment);
+		
+		
+		//check is Action Y or N translate to 1 or 0
+		if (field.equals("isException"))
+		{
+			if (value.equals("Y"))
+			{
+				value = "1";
+			}
+			else{
+				value = "0";
+			}
+		}
+		
+		try{
+			conn = RM3DataSourceConnectionFactory.getHRR3Connection();
+			String sql  = "UPDATE "+table+" set `"+field+"` =  '"+value+"' WHERE statdate = '"+date+"' "
+					+ "and hotel_id = "+hotel_id+" "
+					+ "and segment_id = "+segment+" "
+					+ "limit 1 ";
+			System.out.println("statemet is ["+sql+"]");
+			System.out.println("new value  is ["+value+"]");
+			
+			s = conn.createStatement();
+			
+			s.executeUpdate(sql);
+			System.out.println("Final Excecuted Query  ["+sql+"]");
+		}
+		catch (NamingException | SQLException e)
+		{
+			// TODO Auto-generated catch block
+			   e.printStackTrace();
+			//return null;
+		}
+		finally { close(rs, ps, conn); }
+		
+	}
 	
 	protected void close(ResultSet rs, PreparedStatement ps, Connection conn) {
 		  

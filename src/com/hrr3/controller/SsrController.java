@@ -99,6 +99,7 @@ public class SsrController extends HttpServlet {
 		
 		if (user==null)
 		{
+			
 			response.sendRedirect("/login.zul");
 		}
 		else{
@@ -121,6 +122,9 @@ public class SsrController extends HttpServlet {
 		}
 		catch(Exception e){};
 		
+		if (user==null || user.getUserId()==null)
+			response.sendRedirect("/login.zul");
+		
 		int userId = user.getUserId();
 		int customerId = user.getCurrentCustomer().getCustomerId();
 		
@@ -136,16 +140,15 @@ public class SsrController extends HttpServlet {
 		
 		System.out.println("user id "+userId);
 		System.out.println("customer id "+customerId);
-		
-		
-
-		
+			
 		
 		request.setAttribute("tdrList", tdrList);
 		
 		System.out.println("User is "+user);
 		request.setAttribute("user", user);
 		request.getRequestDispatcher("WEB-INF/views/ssr.jsp").forward(request, response);
+		
+		
 	}
 	
 	 public static Date parseDate(String date) {

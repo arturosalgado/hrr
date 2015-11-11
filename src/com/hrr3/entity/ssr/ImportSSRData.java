@@ -1,6 +1,7 @@
 package com.hrr3.entity.ssr;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class ImportSSRData {
 
@@ -114,6 +115,9 @@ public class ImportSSRData {
 	public BigDecimal getSsrTransient() {
 		return ssrTransient;
 	}
+	public String getSsrTransientS() {
+		return new DecimalFormat("0").format(ssrTransient);
+	}
 
 	/**
 	 * @param ssrTransient the ssrTransient to set
@@ -211,6 +215,10 @@ public class ImportSSRData {
 	 */
 	public String getA1() {
 		return a1;
+	}
+	
+	public String getA1S() {
+		 return String.format("%d",a1);
 	}
 
 	/**

@@ -1,6 +1,7 @@
 package com.hrr3.entity.ssr;
 
 import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class SSRInputData extends ImportSSRData{
 	
@@ -82,6 +83,9 @@ public class SSRInputData extends ImportSSRData{
 	{
 		if (this.isException==0)
 			return "N";
+		if (this.isException==1)
+		return "Y";
+		
 		return "";
 		
 	}
@@ -135,8 +139,9 @@ public class SSRInputData extends ImportSSRData{
 	public BigDecimal getTotOcc() {
 		return totOcc;
 	}
-
-
+	public String getTotOccS() {
+		return new DecimalFormat("0").format(totOcc);
+	}
 	/**
 	 * @param totOcc the totOcc to set
 	 */
@@ -181,7 +186,14 @@ public class SSRInputData extends ImportSSRData{
 	 * @return the rotbTrans
 	 */
 	public BigDecimal getRotbTrans() {
+		
+		//getRotbTrans
 		return rotbTrans;
+	}
+	public String getRotbTransS() {
+		
+		//getRotbTrans
+		return new DecimalFormat("0").format(rotbTrans);
 	}
 
 
@@ -199,7 +211,10 @@ public class SSRInputData extends ImportSSRData{
 	public BigDecimal getRotbGroup() {
 		return rotbGroup;
 	}
-
+	public String getRotbGroupS() {
+	//getRotbTrans
+	return new DecimalFormat("0").format(rotbGroup);
+	}
 
 	/**
 	 * @param rotbGroup the rotbGroup to set
@@ -210,10 +225,13 @@ public class SSRInputData extends ImportSSRData{
 
 
 	/**
-	 * @return the grpPickedup
+	 * @return the grpPickedup -- getGrpPickedup
 	 */
 	public BigDecimal getGrpPickedup() {
 		return grpPickedup;
+	}
+	public String getGrpPickedupS() {
+		return new DecimalFormat("0").format(grpPickedup);
 	}
 
 
@@ -231,6 +249,11 @@ public class SSRInputData extends ImportSSRData{
 	public BigDecimal getGrpRmsRem() {
 		return grpRmsRem;
 	}
+	
+	public String getGrpRmsRemS() {
+		return new DecimalFormat("0").format(grpRmsRem);
+	}
+
 
 
 	/**
@@ -246,6 +269,12 @@ public class SSRInputData extends ImportSSRData{
 	 */
 	public BigDecimal getRotbCont() {
 		return rotbCont;
+	}
+	
+	
+	public String getRotbContS() {
+		return new DecimalFormat("0").format(rotbCont);
+		
 	}
 
 
@@ -264,7 +293,10 @@ public class SSRInputData extends ImportSSRData{
 		return grpDemandtd;
 	}
 
-
+	public String getGrpDemandtdS() {
+		return new DecimalFormat("0").format(grpDemandtd);
+		
+	}
 	/**
 	 * @param grpDemandtd the grpDemandtd to set
 	 */
@@ -279,7 +311,9 @@ public class SSRInputData extends ImportSSRData{
 	public BigDecimal getGrpPricetd() {
 		return grpPricetd;
 	}
-
+	public String getGrpPricetdS() {
+		return new DecimalFormat("0").format(grpPricetd);
+	}
 	
 
 	/**
@@ -295,6 +329,9 @@ public class SSRInputData extends ImportSSRData{
 	 */
 	public BigDecimal getSeasonalmarrate() {
 		return seasonalmarrate;
+	}
+	public String getSeasonalmarrateS() {
+		return new DecimalFormat("0").format(seasonalmarrate);
 	}
 
 
