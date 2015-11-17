@@ -415,7 +415,7 @@
 </tr>
 <tr id="mXDPb-chdex" style="border:0px solid green" valign="top" style="height: 601px; width: 1391px;">
 <td align="left" style="min-width: 1px;">
-<div style="">
+<div style="border:1px solid red; overflow: scroll">
 	<table id="mXDPb" class="z-hbox" cellpadding="0" cellspacing="0" border="0" style="height: 601px; width: px;overflow: scroll">
 <tbody>
    <tr valign="top">
@@ -424,7 +424,7 @@
 <tbody>
    <tr valign="top">
       <td id="mXDPc-chdex" style="min-width: 1px; height: 601px; width: 1391px;">
-<div id="mXDPc" style="height: 599px; width: 1389px;background-image:none!important" class="z-grid">
+<div id="mXDPc" style="height: 599px; width: 1389px;" class="z-grid">
 <div id="mXDPc-head" class="z-grid-header" style="width: 1372px;">
 <table style="border:0px solid purple" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout: fixed; ">
   <tbody style="visibility:hidden;height:0px">
@@ -1044,12 +1044,12 @@ row++;
                                                                               </table>
                                                                            </div>
                                                                            <div id="mXDPc-frozen" class="z-grid-frozen">
-                                                                              <div id="mXDPf" style="height: 0px; " class="z-frozen">
-                                                                                 <div id="mXDPf-cave" class="z-frozen-body" style="height: 0px; width: 750px;">
+                                                                              <div id="mXDPf" style="height: 17px; background: rgb(223, 222, 216);" class="z-frozen">
+                                                                                 <div id="mXDPf-cave" class="z-frozen-body" style="height: 17px; width: 750px;">
                                                                                     <div id="mXDPg" style="padding: 0 10px;" class="z-div"></div>
                                                                                  </div>
                                                                                  <div id="mXDPf-scrollX" class="z-frozen-inner" tabindex="-1" style="display:none;">
-                                                                                    <div style="height: 0px; width: 1089px;"></div>
+                                                                                    <div style="height: 17px; width: 1089px;"></div>
                                                                                  </div>
                                                                                  <div class="z-clear"></div>
                                                                               </div>
