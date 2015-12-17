@@ -116,7 +116,8 @@ public class ImportSSRData {
 		return ssrTransient;
 	}
 	public String getSsrTransientS() {
-		return new DecimalFormat("0").format(ssrTransient);
+		DecimalFormat formatter = new DecimalFormat("###,###.##");
+		return formatter.format(ssrTransient);
 	}
 
 	/**

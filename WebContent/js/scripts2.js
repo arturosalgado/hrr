@@ -51,9 +51,12 @@ $(document).ready(function(){
            	var xml = $(data);
            	  var lrr = xml.find('lrr');
            	  //alert(lrr.text())
-           	  if (lrr.text()!="")
-           	  $("#LRR-"+update_id).text(lrr.text());
+           	  //if (lrr.text()!="")
            	  
+           	  if (col<12 && col >=1)
+           	  {
+           		  $("#LRR-"+update_id).text(lrr.text());
+           	  }
            	  var x=400;
          	    var currentBackground=$(e).css("background-color");;
          	    

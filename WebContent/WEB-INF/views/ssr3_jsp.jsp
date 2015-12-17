@@ -100,8 +100,8 @@
 <div class="z-window-embedded-cl">
    <div class="z-window-embedded-cr">
       <div class="z-window-embedded-cm">
-         <div id="mXDP1-cave" style="overflow:scroll;" class="z-window-embedded-cnt">
-            <table id="mXDP2" class="z-vbox" cellpadding="0" cellspacing="0" border="0" style="min-height: 678px; width: 1391px;">
+         <div id="mXDP1-cave" style="overflow:scroll; scroll-x:" class="z-window-embedded-cnt">
+            <table id="mXDP2" class="z-vbox" cellpadding="0" cellspacing="0" border="0" style="height: 678px; width: 1391px;">
 <tbody>
    <tr valign="top">
       <td id="mXDP2-frame" style="width:100%;height:100%" align="left">
@@ -413,21 +413,109 @@
 <tr id="mXDP3-chdex2" class="z-vbox-sep">
    <td><img style="height:0;width:0"></td>
 </tr>
-<tr id="mXDPb-chdex" style="border:0px solid green" valign="top" style="min-height: 601px; width: 1391px;">
+<tr id="mXDPb-chdex" style="border:0px solid green" valign="top" style="height: 601px; width: 1391px;">
 <td align="left" style="min-width: 1px;">
 <div style="">
-	<table id="mXDPb" class="z-hbox" cellpadding="0" cellspacing="0" border="0" style="min-height: 601px; width: px;overflow: scroll">
+	<table id="mXDPb" class="z-hbox" cellpadding="0" cellspacing="0" border="0" style="height: 601px; width: px;overflow: scroll">
 <tbody>
    <tr valign="top">
       <td id="mXDPb-frame" style="width: 100%; height: 601px;" align="left">
 <table id="mXDPb-real" cellpadding="0" cellspacing="0" border="0" style="text-align:left">
 <tbody>
    <tr valign="top">
-      <td id="mXDPc-chdex" style="min-width: 1px; min-height: 601px; width: 1391px;">
-<div id="mXDPc" style="min-height: 599px; width: 1389px;background-image:none!important" class="z-grid">
+      <td id="mXDPc-chdex" style="min-width: 1px; height: 601px; width: 1391px;">
+<div id="mXDPc" style="height: 599px; width: 1389px;background-image:none!important" class="z-grid">
 <div id="mXDPc-head" class="z-grid-header" style="width: 1372px;">
 <table style="border:0px solid purple" width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout: fixed; ">
-  
+  <tbody style="visibility:hidden;height:0px">
+     <tr id="mXDPh-hdfaker" class="z-grid-faker">
+        <th id="mXDPq-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPr-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPs-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPt-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPu-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPv-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPx-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPz-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP_0-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP00-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP10-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP20-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP30-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP40-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP50-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP60-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP70-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP80-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP90-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPa0-hdfaker" style="display: none; width: 0px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPb0-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPc0-hdfaker" style="text-align: center; width:px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPe0-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPg0-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPi0-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPj0-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPl0-hdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPn0-hdfaker" class="z-column" style="width: px;">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPh-hdfakerflex" style="width: px;"></th>
+     </tr>
+  </tbody>
   <tbody>
      <tr id="mXDPd" class="z-auxhead" align="left">
         <th id="mXDPl" style="text-align:center;" class="z-auxheader" colspan="5">
@@ -447,176 +535,176 @@
         </th>
      </tr>
      <tr id="mXDPh" class="z-columns" align="left">
-        <th id="mXDPq" style="text-align: center; width:137px;" class="z-column">
+        <th id="mXDPq" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPq-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               Comments
            </div>
         </th>
-        <th id="mXDPr" style="text-align: center;width:60px; " class="z-column">
+        <th id="mXDPr" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPr-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               Exception
            </div>
         </th>
-        <th id="mXDPs" style="text-align: center; width: 58px;" class="z-column">
+        <th id="mXDPs" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPs-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               DOW
            </div>
         </th>
-        <th id="mXDPt" style="text-align: center; width: 54px;" class="z-column">
+        <th id="mXDPt" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPt-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               Date
            </div>
         </th>
-        <th id="mXDPu" style="text-align: center; width:33px;" class="z-column">
+        <th id="mXDPu" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPu-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               A/F
            </div>
         </th>
-        <th id="mXDPv" style="text-align: center; width: 44px;" class="z-column">
+        <th id="mXDPv" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPv-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               <span id="mXDPw" class="z-label">Tot <br>
               Occ%</span>
            </div>
         </th>
-        <th id="mXDPx" style="text-align: center; width:44px;" class="z-column">
+        <th id="mXDPx" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPx-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               <span id="mXDPy" class="z-label">Occ <br>
               Rms</span>
            </div>
         </th>
-        <th id="mXDPz" style="text-align: center; width:44px;" class="z-column">
+        <th id="mXDPz" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPz-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               LRR
            </div>
         </th>
-        <th id="mXDP_0" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP_0" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP_0-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               A/0
            </div>
         </th>
-        <th id="mXDP00" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP00" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP00-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               B/1
            </div>
         </th>
-        <th id="mXDP10" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP10" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP10-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               C/2
            </div>
         </th>
-        <th id="mXDP20" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP20" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP20-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               D/3
            </div>
         </th>
-        <th id="mXDP30" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP30" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP30-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               E/4
            </div>
         </th>
-        <th id="mXDP40" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP40" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP40-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               F/5
            </div>
         </th>
-        <th id="mXDP50" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP50" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP50-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               G/6
            </div>
         </th>
-        <th id="mXDP60" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP60" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP60-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               H/7
            </div>
         </th>
-        <th id="mXDP70" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP70" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP70-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               I/8
            </div>
         </th>
-        <th id="mXDP80" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP80" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP80-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               HP1
            </div>
         </th>
-        <th id="mXDP90" style="text-align: center; width: 30px;" class="z-column">
+        <th id="mXDP90" style="text-align: center; width: px;" class="z-column">
            <div id="mXDP90-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               HP2
            </div>
         </th>
-        <th id="mXDPa0" style="display: none; width: 30px;" class="z-column">
+        <th id="mXDPa0" style="display: none; width: 0px;" class="z-column">
            <div id="mXDPa0-cave" class="z-column-cnt">
               <div class="z-column-sort-img"></div>
               Oversell Factor
            </div>
         </th>
-        <th id="mXDPb0" style="text-align: center; width: 46px;" class="z-column">
+        <th id="mXDPb0" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPb0-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               Trans
            </div>
         </th>
-        <th id="mXDPc0" style="text-align: center; width: 46px;" class="z-column">
+        <th id="mXDPc0" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPc0-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               <span id="mXDPd0" class="z-label">Group <br>
               Block</span>
            </div>
         </th>
-        <th id="mXDPe0" style="text-align: center; width: 46px;" class="z-column">
+        <th id="mXDPe0" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPe0-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               <span id="mXDPf0" class="z-label">Group <br>
               P/U</span>
            </div>
         </th>
-        <th id="mXDPg0" style="text-align: center; width: 46px;" class="z-column">
+        <th id="mXDPg0" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPg0-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               <span id="mXDPh0" class="z-label">Group <br>
               Remain</span>
            </div>
         </th>
-        <th id="mXDPi0" style="text-align: center; width: 46px;" class="z-column">
+        <th id="mXDPi0" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPi0-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               Contract
            </div>
         </th>
-        <th id="mXDPj0" style="text-align: center; width: 46px;" class="z-column">
+        <th id="mXDPj0" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPj0-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               <span id="mXDPk0" class="z-label">Demand <br>
               TD</span>
            </div>
         </th>
-        <th id="mXDPl0" style="text-align: center; width: 46px;" class="z-column">
+        <th id="mXDPl0" style="text-align: center; width: px;" class="z-column">
            <div id="mXDPl0-cave" class="z-column-cnt" style="text-align: center; width: px;">
               <div class="z-column-sort-img"></div>
               <span id="mXDPm0" class="z-label">Price <br>
               TD</span>
            </div>
         </th>
-        <th id="mXDPn0" class="z-column" style="width: 90px;">
+        <th id="mXDPn0" class="z-column" style="width: px;">
            <div id="mXDPn0-cave" class="z-column-cnt" style="width: px;">
                   <div class="z-column-sort-img"></div>
                   <span id="mXDPo0" class="z-label">SSR <br>
@@ -628,254 +716,332 @@
    </table>
 </div>
 <div class="z-grid-header-bg"></div>
-<style>
-table#content,
-table#content td{
-border:1px solid #dedede;
-border-collapse:collapse;
-font-family:arial, sans-serif;
-}
-</style>
-<div style="border:0px solid red;">
-<table id="content" style="">
+<div id="mXDPc-body" class="z-grid-body z-word-nowrap" style="overflow-x: hidden; height: 514px; width: px;">
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="table-layout: fixed; width: px;">
+  <tbody style="visibility:hidden;height:0px">
+     <tr id="mXDPh-bdfaker" class="z-grid-faker">
+        <th id="mXDPq-bdfaker" style="text-align: center; width: px;" class="z-column ">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPr-bdfaker" style="text-align: center; width: px;" class="z-column " >
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPs-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPt-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPu-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPv-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPx-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPz-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP_0-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP00-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP10-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP20-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP30-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP40-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP50-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP60-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP70-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP80-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDP90-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPa0-bdfaker" style="display: none; width: 0px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPb0-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPc0-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPe0-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPg0-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPi0-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPj0-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPl0-bdfaker" style="text-align: center; width: px;" class="z-column">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPn0-bdfaker" class="z-column" style="width: px;">
+           <div style="overflow:hidden"></div>
+        </th>
+        <th id="mXDPh-bdfakerflex"></th>
+     </tr>
+  </tbody>
+  <tbody id="mXDPk" class="z-rows">
 
 <c:forEach items="${tdrList}" var="record">
 <% String type= "odd";
 if (row%2==0)
 	type="even";
-%>  
-
-<tr  class="z-grid-<%=type%>" >
-	<td style="width: 140px;">
-	<input  
+%>                               
+<tr id="rEsPr0" class="z-row z-grid-<%=type%>">
+	<td id="rEsPk1-chdextr" class="z-row-inner">
+		<div id="rEsPk1-cell" class="z-row-cnt z-overflow-hidden">
+			<input  
 			   id="cell_<%=row %>_-1" 
 			   col="-1"
 			   row="<%= row %>"
 			   update_id="${record.getId()}" 
-			style="width:98%;" class="changes keylistener   z-textbox z-textbox-inplace" 
+			style="width:120px;" class="changes keylistener   z-textbox z-textbox-inplace" 
 			value="${record.getComment()}" type="text">
-	
+		</div>
 	</td>
-	<td style="width: 63px;" class="">
-		<input
+	<td id="rEsPl1-chdextr" class="z-row-inner">
+		<div id="rEsPl1-cell" class="z-row-cnt z-overflow-hidden">
+			<input
 			id="cell_<%=row %>_0" 
 			col="0"
 			row="<%= row %>"
 			update_id="${record.getId()}" 
-			style="width:60px" class="changes editormode keylistener z-textbox z-textbox-inplace" 
+			style="width:40px;" class="changes editormode keylistener z-textbox z-textbox-inplace" 
 			value="${record.isException()}" type="text" maxlength="1">
+		</div>
 	</td>
-	<td style="width: 61px;!important">
-		<span style="width:100%;overflow:hidden;display:block;font-size:9px;">
-		${record.getDow()}
-		</span>
-	</td>
-	<td style="width: 56px;">
-		<span id="rEsPn1" class="z-label" style="display:block;width:100%;overflow:hidden;font-size:11px;">
-		${record.getStatdate()}
-		</span>
-	</td>
-	<td style="width: 35px;" align="center">
-		<span id="rEsPo1" class="z-label">${record.getIsActualLabel()}</span>
-	</td>
-	<td style="width: 46px;">
-		<span id="rEsPp1" class="z-label" style="width:39px;display:block;font-size:9px;text-align:right;">
-			<c:out value="${record.getOccpcnt()}"/>
-			</span>
-	</td>
-	<td style="width: 46px;">
-	
-	<span id="rEsPq1" class="z-label" style="display:block;width:39px;overflow:hidden;font-size:10px;text-align:right">
+	<td id="rEsPm1-chdextr" class="z-row-inner">
+	<div id="rEsPm1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPm1" class="z-label">
+	${record.getDow()}
+	</span>
+	</div></td><td id="rEsPn1-chdextr" class="z-row-inner">
+	<div id="rEsPn1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPn1" class="z-label">
+	${record.getStatdate()}
+	</span></div></td>
+	<td id="rEsPo1-chdextr" class="z-row-inner"><div id="rEsPo1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPo1" class="z-label">${record.getIsActualLabel()}</span></div></td>
+	<td id="rEsPp1-chdextr" class="z-row-inner">
+	<div id="rEsPp1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPp1" class="z-label">
+	<c:out value="${record.getOccpcnt()}"/>
+	</span></div></td>
+	<td id="rEsPq1-chdextr" class="z-row-inner">
+	<div id="rEsPq1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPq1" class="z-label">
 	<c:out value="${record.getTotOccS()}"/>
-	</span>
-	
-	</td>
-	<td style="width: 46px;">
-	
-		<span id="LRR-${record.getId()}" class="z-label" style="display:block;text-align:right;font-size:9px;">
+	</span></div></td>
+	<td id="rEsPr1-chdextr" class="z-row-inner">
+	<div id="rEsPr1-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="LRR-${record.getId()}" class="z-label">
 	<c:out value="${record.getLrr()}"/>
-	</span>
+	</span></div></td>
+	<td id="rEsPs1-chdextr" class="z-row-inner">
+	<div id="" class="z-row-cnt z-overflow-hidden">
 	
-	</td>
-	<td style="width:32px;">
 	
 	<input id="cell_<%=row %>_1" style="width:25px;" 
-	 update_id="${record.getId()}" 
+	update_id="${record.getId()}" 
 	 class="keylistener editormode changes z-textbox z-textbox-inplace"
 	  row="<%= row %>"
 	  col="1"  
 	  value="${record.getA1()}" type="text">
-	
-	
-	</td>
-	<td style="width: 32px;">
-		
-		<input id="cell_<%=row %>_2" style="width:25px;" update_id="${record.getId()}" 
+	</div></td>
+	<td id="rEsPt1-chdextr" class="z-row-inner">
+	<div id="rEsPt1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_2" style="width:25px;" update_id="${record.getId()}" 
 	 row="<%= row %>" col="2" class="changes keylistener z-textbox z-textbox-inplace"
-	 value="${record.getB2()}" type="text">
-		
-	</td>
-	<td style="width: 32px;">
-		
-		<input id="cell_<%=row %>_3" style="width:25px;" update_id="${record.getId()}" row="<%= row %>" col="3" class="changes keylistener z-textbox z-textbox-inplace" 
-	value="${record.getC3()}" type="text">
-		
-	</td>
-	<td style="width: 31px;">
+	 value="${record.getB2()}" type="text"></div></td>
+	 
+	<td id="rEsPu1-chdextr" class="z-row-inner"><div  id="rEsPu1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_3" style="width:25px;" update_id="${record.getId()}" row="<%= row %>" col="3" class="changes keylistener z-textbox z-textbox-inplace" 
+	value="${record.getC3()}" type="text"></div></td>
 	
-		<input id="cell_<%=row %>_4" style="width:25px;" update_id="${record.getId()}" 
+	<td id="rEsPv1-chdextr" class="z-row-inner">
+	<div id="rEsPv1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_4" style="width:25px;" update_id="${record.getId()}" 
 	row="<%= row %>" col="4"   class="changes keylistener z-textbox z-textbox-inplace" 
-	value="${record.getD4()}" type="text">
+	value="${record.getD4()}" type="text"></div></td>
 	
-	</td>
-	<td style="width: 32px;">
-			
-			<input id="cell_<%=row %>_5" style="width:25px;" update_id="${record.getId()}"
+	<td id="rEsPw1-chdextr" class="z-row-inner">
+	<div id="rEsPw1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_5" style="width:25px;" update_id="${record.getId()}"
 	 row="<%= row %>" col="5"  class="changes keylistener z-textbox z-textbox-inplace" 
-	value="${record.getE5()}" type="text">
-			
-	</td>
-	<td style="width: 32px;">
+	value="${record.getE5()}" type="text"></div></td>
 	
-		<input id="cell_<%=row %>_6" style="width:25px;"
+	
+	<td id="rEsPx1-chdextr" class="z-row-inner">
+	<div id="rEsPx1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_6" style="width:25px;"
 	 update_id="${record.getId()}" row="<%= row %>" col="6"  class="changes keylistener z-textbox z-textbox-inplace" 
-	value="${record.getF6()}" type="text">
+	value="${record.getF6()}" type="text"></div></td>
 	
-	
-	</td>
-	<td style="width: 32px;">
-	
-		<input id="cell_<%=row %>_7" style="width:100%;" 
+	<td id="rEsPy1-chdextr" class="z-row-inner"><div id="rEsPy1-cell" 
+	class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_7" style="width:25px;" 
 	update_id="${record.getId()}" row="<%= row %>" col="7"  
 	class="changes keylistener z-textbox z-textbox-inplace"
-	 value="${record.getG7()}" type="text">
+	 value="${record.getG7()}" type="text"></div></td>
 	
 	
-	</td>
-	<td style="width: 32px;">
-			
-			<input id="cell_<%=row %>_8" style="width:100%;" update_id="${record.getId()}" row="<%= row %>" col="8"  class="changes keylistener z-textbox z-textbox-inplace" 
-	value="${record.getH8()}" type="text">
-			
-	</td>
-	<td style="width: 28px;">
+	<td id="rEsPz1-chdextr" class="z-row-inner">
+	<div id="rEsPz1-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_8" style="width:25px;" update_id="${record.getId()}" row="<%= row %>" col="8"  class="changes keylistener z-textbox z-textbox-inplace" 
+	value="${record.getH8()}" type="text"></div></td>
 	
-		<input id="cell_<%=row %>_9" style="width:29px" 
+	<td id="rEsP_2-chdextr" class="z-row-inner">
+	<div id="rEsP_2-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_9" style="width:25px;" 
 	update_id="${record.getId()}" row="<%= row %>" col="9"  class="keylistener changes z-textbox z-textbox-inplace" 
-	value="${record.getI9()}" type="text">
+	value="${record.getI9()}" type="text"></div></td>
 	
-	</td>
-	<td style="width: 32px;">
 	
-	<input id="cell_<%=row %>_10" style="width:100%;" update_id="${record.getId()}"
+	<td id="rEsP02-chdextr" class="z-row-inner">
+	<div id="rEsP02-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_10" style="width:25px;" update_id="${record.getId()}"
 	 row="<%= row %>" col="10"  class="keylistener changes z-textbox z-textbox-inplace" 
-	value="${record.getHp1()}" type="text">
+	value="${record.getHp1()}" type="text"></div></td>
 	
-	</td>
-	<td style="width: 32px;">
 	
-		<input id="cell_<%=row %>_11" style="width:25px;"
+	<td id="rEsP12-chdextr" class="z-row-inner"><div id="rEsP12-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_11" style="width:25px;"
 	 update_id="${record.getId()}" row="<%= row %>" col="11" 
 	  class="keylistener changes z-textbox z-textbox-inplace"
 	 value="${record.getHp2()}" type="text">
+	 </div>
+	 </td>
 	
-	</td>
-	<td style="width: 48px;">
+	
+	
+	
+	
+	<td id="rEsP32-chdextr" class="z-row-inner">
+	<div id="rEsP32-cell" class="z-row-cnt z-overflow-hidden">
+	
 	
 	<input  id="cell_<%=row %>_12"  row="<%=row %>"
 	 col="12"
 	 update_id="${record.getId()}"
-	 style="width:100%;text-align:right;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	 value="${record.getRotbTransS()}" type="text" size="11">	
-	
+	 style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
+	 value="${record.getOversellFactor()}" type="text" size="11">
+	</div>
 	</td>
 	
-	
-	<td style="width: 48px;">
-			
-		<input  id="cell_<%=row %>_13"  row="<%=row%>" 
+	<td id="rEsP42-chdextr" class="z-row-inner">
+	<div id="rEsP42-cell" class="z-row-cnt z-overflow-hidden">
+	<input  id="cell_<%=row %>_13"  row="<%=row%>" 
 	col="13"
 	update_id="${record.getId()}"
-	style="width:100%;text-align:right;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	value="${record.getRotbGroupS()}"  type="text" size="11">	
-			
+	style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
+	value="${record.getRotbGroupS()}"  type="text" size="11">
+	</div>
 	</td>
-	<td style="width: 48px;">
 	
-		<input  id="cell_<%=row %>_14"
+	
+	<td id="rEsP52-chdextr" class="z-row-inner"><div id="rEsP52-cell" class="z-row-cnt z-overflow-hidden">
+	<input  id="cell_<%=row %>_14"
 	 row="<%=row%>"
 	 col="14" 
 	 update_id="${record.getId()}"
-	 style="width:100%;text-align:right;"
+	 style="width:70px;"
 	  class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	  value="<c:out value="${record.getGrpPickedupS()}"/>" type="text" size="11">	
+	  value="<c:out value="${record.getGrpPickedupS()}"/>" type="text" size="11">
+	</div>
+	</td>
 	
+	
+	<td id="rEsP62-chdextr" class="z-row-inner"><div id="rEsP62-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_15"
+	row="<%=row%>" 
+	update_id="${record.getId()}"
+	style="width:70px;"
+	col="15" 
+	class="changes keylistener z-decimalbox z-decimalbox-inplace" value="<c:out value="${record.getGrpRmsRemS()}"/>" type="text" size="11">
+	</div>
 	</td>
-	<td style="width: 49px;">
-		<input id="cell_<%=row %>_15"
-			row="<%=row%>" 
-				update_id="${record.getId()}"
-				style="width:45px;text-align:right;"
-				col="15" 
-				class="changes keylistener z-decimalbox z-decimalbox-inplace" value="<c:out value="${record.getGrpRmsRemS()}"/>" type="text" size="11">
-			
-	</td>
-	<td style="width: 55px;">
-		
-		<input id="cell_<%=row %>_16"
+	
+	
+	<td id="rEsP72-chdextr" class="z-row-inner"><div id="rEsP72-cell" class="z-row-cnt z-overflow-hidden">
+	<input id="cell_<%=row %>_16"
 	row="<%=row%>" 
 	update_id="${record.getId()}"
 	col="16"
-	style="width:52px;text-align:right;" 
+	style="width:70px;" 
 	class="keylistener changes z-decimalbox z-decimalbox-inplace"
-	value="${record.getRotbContS()}" type="text" size="11">
-		
+	value="<c:out value="${record.getRotbContS()}"/>" type="text" size="11">
+	</div>
 	</td>
-	<td style="width: 52px;">
 	
-		<input
+	
+	<td id="rEsP82-chdextr" class="z-row-inner"><div id="rEsP82-cell" class="z-row-cnt z-overflow-hidden">
+	<input
 	 id="cell_<%=row %>_17"
 	 col="17"
 	 row="<%=row%>" 
 	 update_id="${record.getId()}"
-	 style="text-align:right;width:48px;" 
+	 style="width:70px;" 
 	 class="keylistener changes z-decimalbox z-decimalbox-inplace" 
 	 value="${record.getGrpDemandtdS()}" 
 	 type="text" size="11">
-	
+	</div>
 	</td>
-	<td style="width: 40px;">
 	
-		<input 
-	id="cell_<%=row %>_18"
-	col="18"
-	update_id="${record.getId()}"
-	row="<%=row%>" 
-	style="text-align:right;width:45px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	value="<c:out value="${record.getGrpPricetdS()}"/>" 
-	type="text" size="11">
-	
-	</td>
-	<td style="width: 90px;">
-	
+	<td id="rEsP92-chdextr" class="z-row-inner">
+	<div id="rEsP92-cell" class="z-row-cnt z-overflow-hidden">
 	<input 
 	id="cell_<%=row %>_18"
 	col="18"
 	update_id="${record.getId()}"
 	row="<%=row%>" 
-	style="text-align:right;width:98px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
-	value="${record.getSeasonalmarrate()}" 
+	style="width:70px;" class="changes keylistener z-decimalbox z-decimalbox-inplace" 
+	value="<c:out value="${record.getGrpPricetdS()}"/>" 
 	type="text" size="11">
-	
+	</div>
 	</td>
+	
+	<td id="rEsPa2-chdextr" class="z-row-inner">
+	<div id="rEsPa2-cell" class="z-row-cnt z-overflow-hidden">
+	<span id="rEsPa2" class="z-label"></span></div></td>
 </tr>
 <%
 row++;
 %>	                                                                                    
-</c:forEach> 
-
-<table>
-<div id="mXDPc-body" class="z-grid-body z-word-nowrap" style="width: px;">
+                                                                                 </c:forEach> 
+                                                                                 </tbody>
+                                                                                 <tbody id="mXDPc-empty" class="z-grid-empty-body" style="display:none">
+                                                                                    <tr>
+                                                                                       <td colspan="1"></td>
+                                                                                    </tr>
+                                                                                 </tbody>
+                                                                              </table>
                                                                            </div>
                                                                            <div id="mXDPc-frozen" class="z-grid-frozen">
                                                                               <div id="mXDPf" style="height: 0px; " class="z-frozen">
@@ -897,8 +1063,6 @@ row++;
                                                       </tr>
                                                    </tbody>
                                                 </table>
-</div>
-
 </div>                                            
                                              </td>
                                           </tr>

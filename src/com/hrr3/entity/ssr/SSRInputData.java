@@ -193,7 +193,11 @@ public class SSRInputData extends ImportSSRData{
 	public String getRotbTransS() {
 		
 		//getRotbTrans
-		return new DecimalFormat("0").format(rotbTrans);
+		//return new DecimalFormat("0").format(rotbTrans);
+		
+		DecimalFormat formatter = new DecimalFormat("###,###.##");
+		return formatter.format(rotbTrans);
+		
 	}
 
 
@@ -213,7 +217,10 @@ public class SSRInputData extends ImportSSRData{
 	}
 	public String getRotbGroupS() {
 	//getRotbTrans
-	return new DecimalFormat("0").format(rotbGroup);
+	//return new DecimalFormat("0").format(rotbGroup);
+	
+	DecimalFormat formatter = new DecimalFormat("###,###.##");
+	return formatter.format(rotbGroup);
 	}
 
 	/**
@@ -231,7 +238,11 @@ public class SSRInputData extends ImportSSRData{
 		return grpPickedup;
 	}
 	public String getGrpPickedupS() {
-		return new DecimalFormat("0").format(grpPickedup);
+		
+		DecimalFormat formatter = new DecimalFormat("###,###.##");
+		return formatter.format(grpPickedup);
+		
+		//return new DecimalFormat("0").format(grpPickedup);
 	}
 
 
@@ -251,7 +262,10 @@ public class SSRInputData extends ImportSSRData{
 	}
 	
 	public String getGrpRmsRemS() {
-		return new DecimalFormat("0").format(grpRmsRem);
+		
+		DecimalFormat formatter = new DecimalFormat("###,###.##");
+		return formatter.format(grpRmsRem);
+		//return new DecimalFormat("0").format();
 	}
 
 
@@ -273,8 +287,10 @@ public class SSRInputData extends ImportSSRData{
 	
 	
 	public String getRotbContS() {
-		return new DecimalFormat("0").format(rotbCont);
 		
+		//return new DecimalFormat("0").format(rotbCont);
+		DecimalFormat formatter = new DecimalFormat("###,###.##");
+		return formatter.format(rotbCont);
 	}
 
 
@@ -294,8 +310,9 @@ public class SSRInputData extends ImportSSRData{
 	}
 
 	public String getGrpDemandtdS() {
-		return new DecimalFormat("0").format(grpDemandtd);
-		
+		//return new DecimalFormat("0").format(grpDemandtd);
+		DecimalFormat formatter = new DecimalFormat("###,###.##");
+		return formatter.format(grpDemandtd);
 	}
 	/**
 	 * @param grpDemandtd the grpDemandtd to set
@@ -312,7 +329,10 @@ public class SSRInputData extends ImportSSRData{
 		return grpPricetd;
 	}
 	public String getGrpPricetdS() {
-		return new DecimalFormat("0").format(grpPricetd);
+		
+		DecimalFormat formatter = new DecimalFormat("###,###.##");
+		return formatter.format(grpPricetd);
+		//return new DecimalFormat("0").format(grpPricetd);
 	}
 	
 

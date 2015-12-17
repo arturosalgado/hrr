@@ -107,6 +107,16 @@ public class SsrControllerAjax extends HttpServlet {
 		return;
 		
 		update((long)Id,"lrr",lrr,table,col);
+		
+		// the case when the dot is removed and LRR should go back to blank;
+		if (value.equals("") && Integer.parseInt(col)<=11 && Integer.parseInt(col)>=1)
+		{	
+			lrr = getUpdateLRRValue((long)Id,Integer.parseInt(col), value);
+			System.out.println("Next Availble value for LRR is ["+lrr+"]");
+			update((long)Id,"lrr",lrr,table,col);	
+			//lrr="";
+		}
+		
 		response.setContentType("application/xml");
 	    PrintWriter writer = response.getWriter();
 	 	writer.print(xml(lrr));
@@ -140,7 +150,7 @@ public class SsrControllerAjax extends HttpServlet {
 		switch(col)
 		{
 			case 1: 
-				lrr="Close";
+				lrr="Closed";
 			break;
 			case 2:
 			case 3:
@@ -268,9 +278,9 @@ public class SsrControllerAjax extends HttpServlet {
 	String getTable(String colNumber)
 	{
 		int col = Integer.parseInt(colNumber);
-		if (col>1 && col < 12)
+		if (col>=-1 && col < 12)
 			return "RM3SSRData";
-		else if (col>12 && col <= 19)
+		else if (col>=12 && col <= 19)
 			return "RM3SSRSegmentData";
 		else
 			return "";
@@ -297,7 +307,7 @@ public class SsrControllerAjax extends HttpServlet {
 		if (colNumber.equals("12") )//commments
 		{
 			System.out.println("is trans   ");
-			return "oversell_factor";
+			return "tot_occ";
 		}
 		
 		if (colNumber.equals("13") )//commments
@@ -394,6 +404,10 @@ public class SsrControllerAjax extends HttpServlet {
 		int segment = 0;
 		switch(col)
 		{
+			case "12":
+			segment = 1;
+			break;
+		
 			case "13":
 			segment = 2;
 			break;
